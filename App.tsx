@@ -5,9 +5,42 @@ import {View, Text, StyleSheet, Image} from "react-native";
 // Local Imports
 import CustomSlider from "./components/custom-slider";
 
-// Main App Component
+// Styles
+const styles = StyleSheet.create({
+  appView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#202225",
+    marginBottom: 0,
+  },
+
+  counterText: {
+    color: "#5865f2",
+    fontSize: 35,
+    marginTop: 40,
+    fontFamily: "JetbrainsMono",
+    fontWeight: "600",
+  },
+
+  catImage: {
+    width: 300,
+    height: 300,
+    marginBottom: 20,
+    marginTop: 30,
+    borderRadius: 10,
+  },
+
+  signatureText: {
+    color: "#5865f2",
+    fontFamily: "JetbrainsMono",
+    textAlign: "center",
+    fontSize: 12,
+  },
+});
+
 const App: React.FC = () => {
-  // State for slider value
+  // reactive state for slider value
   const [sliderValue, setSliderValue] = useState(0);
 
   // Func to render cat picture based on slider value
@@ -44,7 +77,7 @@ const App: React.FC = () => {
     }
   };
 
-  // Main App Render
+  // App Render
   return (
     <View style={styles.appView}>
       <Text style={styles.signatureText}>made with ❤️ by bryantpdev</Text>
@@ -55,37 +88,3 @@ const App: React.FC = () => {
   );
 };
 export default App;
-
-// App Stylesheet
-const styles = StyleSheet.create({
-  appView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#202225",
-    marginBottom: 0,
-  },
-
-  counterText: {
-    color: "#5865f2",
-    fontSize: 35,
-    marginTop: 40,
-    fontFamily: "JetbrainsMono",
-    fontWeight: "600",
-  },
-
-  catImage: {
-    width: 300,
-    height: 300,
-    marginBottom: 20,
-    marginTop: 30,
-    borderRadius: 10,
-  },
-
-  signatureText: {
-    color: "#5865f2",
-    fontFamily: "JetbrainsMono",
-    textAlign: "center",
-    fontSize: 12,
-  },
-});

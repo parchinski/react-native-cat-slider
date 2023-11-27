@@ -11,32 +11,6 @@ interface CustomSliderProps {
   onValueChange?: (value: number) => void;
 }
 
-// Create Component using the interface we created inside the React.FC
-const CustomSlider: React.FC<CustomSliderProps> = ({
-  minimumValue = 0,
-  maximumValue = 10,
-  step = 5,
-  onValueChange,
-}) => {
-  return (
-    <View style={styles.container}>
-      <Slider
-        style={styles.slider}
-        minimumValue={minimumValue}
-        maximumValue={maximumValue}
-        step={step}
-        onValueChange={onValueChange}
-        minimumTrackTintColor="#5865f2"
-        maximumTrackTintColor="#23272a"
-        thumbTintColor="#36393f"
-      />
-      <View style={styles.valueContainer}>
-        <Text style={styles.logoHeader}>Kalogon Cat Slider</Text>
-      </View>
-    </View>
-  );
-};
-
 // Styles
 const styles = StyleSheet.create({
   container: {
@@ -66,4 +40,29 @@ const styles = StyleSheet.create({
   },
 });
 
+// Create Component using the interface we created inside the React.FC
+const CustomSlider: React.FC<CustomSliderProps> = ({
+  minimumValue = 0,
+  maximumValue = 10,
+  step = 5,
+  onValueChange,
+}) => {
+  return (
+    <View style={styles.container}>
+      <Slider
+        style={styles.slider}
+        minimumValue={minimumValue}
+        maximumValue={maximumValue}
+        step={step}
+        onValueChange={onValueChange}
+        minimumTrackTintColor="#5865f2"
+        maximumTrackTintColor="#23272a"
+        thumbTintColor="#36393f"
+      />
+      <View style={styles.valueContainer}>
+        <Text style={styles.logoHeader}>Kalogon Cat Slider</Text>
+      </View>
+    </View>
+  );
+};
 export default CustomSlider;
